@@ -1,10 +1,11 @@
 package logic;
 
 import java.awt.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import graphics.ButtonCreator;
+import graphics.CreditMenu;
+import graphics.InstructionMenu;
 import graphics.Window;
 
 import java.awt.event.*;
@@ -14,9 +15,11 @@ public class StartMenu{
 	private boolean gameGoing = false;
 	private boolean timer = true;
 	private Settings settings;
+	private StartMenu startMenu;
 	
 	public StartMenu(Settings initSettings) {
 	    settings = initSettings;
+	    startMenu = this;
 	}
 	
     /**
@@ -80,112 +83,49 @@ public class StartMenu{
         start.addActionListener( new ActionListener(){
     
             public void actionPerformed(ActionEvent e){
-        System.out.println("Start Clicked");
-        settings.run(w, h, name);
-        frame.dispose();
-        }
-});
+		        System.out.println("Start Clicked");
+		        settings.run(w, h, name);
+		        frame.dispose();
+		    }
+        });
        
-       // Adds action listener and opens the instuctions menu
+        // Adds action listener and opens the instuctions menu
         instructionsButton.addActionListener( new ActionListener(){
-    
-            public void actionPerformed(ActionEvent e){
-        System.out.println("Instructions Clicked");
-       frame.dispose();
-       Window frame = new Window(w, h, name);
-        ButtonCreator back = new ButtonCreator(350, 625, 200, 100, Color.RED, "Back");
-        
-        // Create JPanel and JLabel to add logo
-		JPanel panel = (JPanel) frame.getContentPane();
-        panel.setLayout(null);
-        JLabel img = new JLabel(new ImageIcon("assets/INSTRUCTIONS.png"));
-        panel.add(img);
-        Dimension size = img.getMaximumSize();
-        img.setBounds(170, 40, size.width, size.height);
-        
-        JPanel namesPanel = new JPanel();
-        JLabel textLabel = new JLabel("<html><br><br><br>Player 1- Up-&#8593; Left-&#8592; Down-&#8595 Right-&#8594<br><br>Player 2- Up-W Left-A Down-S Right-D<br><br>Player 3- Up-U Left-H Down-J Right-K <br><br>Player 4- Up-8 Left-4 Down-5 Right-6 </html>");
-        textLabel.setFont(new Font("Serif", Font.ITALIC, 30));
-        textLabel.setForeground(Color.WHITE);
-        namesPanel.setBackground(Color.BLACK);
-        namesPanel.add(textLabel);
-        namesPanel.setSize(600,500);
-        namesPanel.setLocation(100,150);
-        namesPanel.setVisible(true);
-        textLabel.setVisible(true);
-        
-        frame.add(namesPanel);
-        frame.add(back);
-        frame.add(img);
-        frame.setVisible(true);
-        
-         // Adds action listener for the back button
-        back.addActionListener( new ActionListener(){
-    
-            public void actionPerformed(ActionEvent e) {
-		frame.dispose();
-        run(w, h, name);
-        }
-});
-       
- 
-        }
-});
+        	
+        	public void actionPerformed(ActionEvent e){
+        		frame.dispose();
+        		InstructionMenu instrMenu = new InstructionMenu(startMenu);
+        		instrMenu.createNewFrame();
+        		instrMenu.showInstructions();
+        		instrMenu.setPanel();
+        	}
+        });
 
         // Adds the action listener for the instructions button
         credits.addActionListener( new ActionListener(){
     
             public void actionPerformed(ActionEvent e){
-        
-        // Frame is created and text placed to show credits
-        System.out.println("Credits Clicked");
-        frame.dispose();
-        Window creditsFrame = new Window(w,h,name);
-        JPanel namesPanel = new JPanel();
-        JLabel textLabel = new JLabel("<html>This game was created by:<br><br> Denis Shevchenko<br><br> Joseph Besenski<br><br>Jason Lyster<br><br>Daniel Sohn<br><br> Kevin Vo </html>");
-        textLabel.setFont(new Font("Serif", Font.ITALIC, 30));
-        textLabel.setForeground(Color.WHITE);
-        namesPanel.add(textLabel);
-        creditsFrame.setSize(900,900);
-        creditsFrame.getContentPane().setBackground(Color.BLACK);
-        namesPanel.setBackground(Color.BLACK);
-        creditsFrame.setLayout(null);
-        namesPanel.setSize(400,600);
-        namesPanel.setLocation(100,100);
-        creditsFrame.add(namesPanel);
-        creditsFrame.setVisible(true);
-        namesPanel.setVisible(true);
-        textLabel.setVisible(true);
-        
-        ButtonCreator exitCredits = new ButtonCreator(350, 625, 200, 100, Color.RED, "Back");
-        creditsFrame.add(exitCredits);
-        
-        // Adds action listener for the exit credits button
-        exitCredits.addActionListener( new ActionListener(){
-    
-            public void actionPerformed(ActionEvent e){
-        System.out.println("Exit Credits Clicked");
-		creditsFrame.dispose();
-        run(w, h, name);
-        }
-});
+            	
+            	frame.dispose();
+            	CreditMenu creditMenu = new CreditMenu(startMenu);
+            	creditMenu.createNewFrame();
+            	creditMenu.showCredits();
+            	creditMenu.setPanel();
  
-        }
-            
-        }
-);
+            }
+        });
         
         // Adds action listener to exit the game when exit is clicked
         exit.addActionListener( new ActionListener(){
     
-           public void actionPerformed(ActionEvent e){
-        System.out.println("Exit Menu Clicked");
-		timer = false;
-		gameGoing = false;
-        settings.setTimer(false);
-		frame.dispose();
-        }
-});
+        	public void actionPerformed(ActionEvent e){
+		        System.out.println("Exit Menu Clicked");
+				timer = false;
+				gameGoing = false;
+		        settings.setTimer(false);
+				frame.dispose();
+	        }
+        });
 
     }
 	  

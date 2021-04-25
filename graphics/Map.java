@@ -2,7 +2,6 @@ package graphics;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.util.Random;
 
 import logic.Main;
 

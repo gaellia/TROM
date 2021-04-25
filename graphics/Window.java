@@ -44,28 +44,28 @@ public class Window extends JFrame implements KeyListener {
         // PLAYER 1
         if (event.getKeyCode() == KeyEvent.VK_RIGHT) {
             try {
-                main.getDriver(0).setDirection("right");
+                main.getPlayer(0).setDirection("right");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_LEFT) {
             try {
-                main.getDriver(0).setDirection("left");
+                main.getPlayer(0).setDirection("left");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_DOWN) {
             try {
-                main.getDriver(0).setDirection("down");
+                main.getPlayer(0).setDirection("down");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_UP) {
             try {
-                main.getDriver(0).setDirection("up");
+                main.getPlayer(0).setDirection("up");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
@@ -74,28 +74,28 @@ public class Window extends JFrame implements KeyListener {
         // PLAYER 2
         else if (event.getKeyCode() == KeyEvent.VK_D) {
             try {
-                main.getDriver(1).setDirection("right");
+                main.getPlayer(1).setDirection("right");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_A) {
             try {
-                main.getDriver(1).setDirection("left");
+                main.getPlayer(1).setDirection("left");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_S) {
             try {
-                main.getDriver(1).setDirection("down");
+                main.getPlayer(1).setDirection("down");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_W) {
             try {
-                main.getDriver(1).setDirection("up");
+                main.getPlayer(1).setDirection("up");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
@@ -104,28 +104,28 @@ public class Window extends JFrame implements KeyListener {
         // PLAYER 3
         else if (event.getKeyCode() == KeyEvent.VK_K) {
             try {
-                main.getDriver(2).setDirection("right");
+                main.getPlayer(2).setDirection("right");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_H) {
             try {
-                main.getDriver(2).setDirection("left");
+                main.getPlayer(2).setDirection("left");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_J) {
             try {
-                main.getDriver(2).setDirection("down");
+                main.getPlayer(2).setDirection("down");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_U) {
             try {
-                main.getDriver(2).setDirection("up");
+                main.getPlayer(2).setDirection("up");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
@@ -134,28 +134,28 @@ public class Window extends JFrame implements KeyListener {
         // PLAYER 4
         else if (event.getKeyCode() == KeyEvent.VK_NUMPAD6) {
             try {
-                main.getDriver(3).setDirection("right");
+                main.getPlayer(3).setDirection("right");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_NUMPAD4) {
             try {
-                main.getDriver(3).setDirection("left");
+                main.getPlayer(3).setDirection("left");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_NUMPAD5) {
             try {
-                main.getDriver(3).setDirection("down");
+                main.getPlayer(3).setDirection("down");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }
 
         else if (event.getKeyCode() == KeyEvent.VK_NUMPAD8) {
             try {
-                main.getDriver(3).setDirection("up");
+                main.getPlayer(3).setDirection("up");
             }
             catch(ArrayIndexOutOfBoundsException exception) {}
         }

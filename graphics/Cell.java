@@ -1,7 +1,6 @@
 package graphics;
 
 import javax.swing.JLabel;
-import javax.swing.BorderFactory;
 
 import java.awt.Color;
 
